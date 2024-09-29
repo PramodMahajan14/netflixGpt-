@@ -1,11 +1,8 @@
 import "./App.css";
+import Body from "./components/Body";
 
 function App() {
-  return (
-    <div className="bg-green-600 border-b-4 border-neutral-700">
-      <h1 className="text-2xl">Hello Pamod</h1>
-    </div>
-  );
+  return <Body />;
 }
 
 export default App;
