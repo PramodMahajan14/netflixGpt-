@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "gpt-netflix-77dfe",
+    "netflix-app": "gpt-netflix-77dfe"
+  },
+  "targets": {}
+}

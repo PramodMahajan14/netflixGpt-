@@ -1,8 +1,9 @@
 /* SignIn Css */
 .hero {
   background: url("../assets/Hero\ Image.png");
-  height: 100vh;
+  height: auto;
   width: 100%;
+  opacity: 1;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
