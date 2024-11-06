@@ -10,7 +10,6 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../util/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../util/userSlice";
 
@@ -54,7 +53,6 @@ const FormSignInSignUp = () => {
   const [FieldType, setFieldType] = useState("password");
   const [Eyeoff, setEyeOff] = useState(true);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const initialValues = SignIN
     ? { email: "", password: "" }
@@ -94,7 +92,6 @@ const FormSignInSignUp = () => {
             addUser({ uid: uid, email: email, displayName: displayName })
           );
         }
-        navigate("/browse");
       } catch ({ message, code }) {
         setErrorMessage(message + "-" + code);
         setTimeout(() => {
