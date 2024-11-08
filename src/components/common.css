@@ -10,3 +10,6 @@
   background-attachment: fixed;
   image-rendering: crisp-edges;
 }
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}

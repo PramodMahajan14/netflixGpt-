@@ -10,8 +10,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../util/firebase";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../util/userSlice";
+import { langauges } from "../util/LagaugeConstants";
 
 const signUpValidationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -52,6 +53,7 @@ const FormSignInSignUp = () => {
   const [texthide, setTextHide] = useState(false);
   const [FieldType, setFieldType] = useState("password");
   const [Eyeoff, setEyeOff] = useState(true);
+  const appLang = useSelector((store) => store.app.lang);
   const dispatch = useDispatch();
 
   const initialValues = SignIN
@@ -138,7 +140,7 @@ const FormSignInSignUp = () => {
               for="floating_outlined"
               className="absolute text-sm text-white duration-300 transform -translate-y-1 scale-75 top-2 z-10 origin-[0] dark:bg-neutral-950 px-2 peer-focus:px-3 peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-50 peer-focus:-translate-y-2 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
             >
-              Name
+              {langauges[appLang].name_placeholder}
             </label>
           </div>
           {formikform.errors.name && (
@@ -166,7 +168,7 @@ const FormSignInSignUp = () => {
           for="floating_outlined"
           className="absolute text-sm text-white duration-300 transform -translate-y-1 scale-75 top-2 z-10 origin-[0] dark:bg-neutral-950 px-2 peer-focus:px-3 peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-50 peer-focus:-translate-y-2 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
         >
-          Email
+          {langauges[appLang].email_placeholder}
         </label>
       </div>
       {formikform.errors.email && (
@@ -202,7 +204,7 @@ const FormSignInSignUp = () => {
           for="floating_outlined"
           className="absolute text-sm text-white duration-300 transform -translate-y-1 scale-75 top-2 z-10 origin-[0] dark:bg-neutral-950 px-2 peer-focus:px-3 peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-50 peer-focus:-translate-y-2 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
         >
-          Password
+          {langauges[appLang].password_placeholder}
         </label>
       </div>
       {formikform.errors.password && (
@@ -213,34 +215,40 @@ const FormSignInSignUp = () => {
         className="w-full px-3 py-2 text-white rounded-md border-none bg-red-700 opacity-100"
         type="submit"
       >
-        Sign In
+        {langauges[appLang].signinbutton}
       </button>
       <div className="flex w-full justify-center mx-0 my-2">
-        <p className="text-white text-center font-semibold text-sm">OR</p>
+        <p className="text-white text-center font-semibold text-sm">
+          {langauges[appLang].or}
+        </p>
       </div>
       <button className="w-full px-3 py-2 text-white text-md rounded-md border-none  bg-[rgba(121,119,119,0.7)]">
-        Use a sign-in code
+        {langauges[appLang].use_a_sign_code}
       </button>
       {SignIN && (
         <div className="flex w-full justify-center my-1">
           <a className="text-white text-center font-bold text-md opacity-100 ">
-            Forgot password?
+            {langauges[appLang].forgot_password}?
           </a>
         </div>
       )}
       <div className="w-full my-2 mx-0 flex justify-start">
         <input type="checkbox" className="text-md mx-1 bg-transparent" />{" "}
-        <label className="text-white text-md mx-2 ">Remember me</label>
+        <label className="text-white text-md mx-2 ">
+          {langauges[appLang].remember_me}
+        </label>
       </div>
       <span className="text-md text-neutral-300">
-        New to netflix?{" "}
+        {langauges[appLang].new_to_netflix}?{" "}
         <span
           className="text-white border-b cursor-pointer"
           onClick={() => {
             setSignIN(!SignIN);
           }}
         >
-          {SignIN ? "Sign up now " : " Sign In"}
+          {SignIN
+            ? langauges[appLang].sign_up_now
+            : langauges[appLang].signinbutton}
         </span>
       </span>
       <p className="text-neutral-400 text-sm my-2">

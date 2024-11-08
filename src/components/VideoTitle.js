@@ -3,7 +3,7 @@ import { ReactComponent as PlayIcon } from "../assets/play.svg";
 
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className="md:px-3   flex-col w-screen items-center md:text-left  md:justify-start md:w-1/2 lg:w-1/4 h-full absolute  top-96 text-center md:top-52 inset-0 bg-opacity-50     ">
+    <div className="md:px-3   flex-col w-screen  items-center md:text-left  md:justify-start md:w-1/2 lg:w-1/4 h-auto absolute  top-96 text-center  md:top-36 inset-0 bg-opacity-50   ">
       <p className="text-2xl md:text-6xl font-bold text-white">{title}</p>
       <p className="text-white hidden md:block">{overview}</p>
       <div className="flex space-x-2 my-2 sm:my-4 justify-center md:justify-start">

@@ -8,12 +8,16 @@ const MainContainer = () => {
 
   if (!movies) return;
 
-  const mainMovie = movies[0];
-  const { original_title, overview, id } = mainMovie;
-  console.log("Movie Id", id);
+  const mainMovie = movies[6];
+  const { original_title, overview, backdrop_path, id } = mainMovie;
+
   return (
-    <div className="w-full h-screen relative">
-      <VideoBackground movieId={id} />
+    <div className="min:w-screen h-screen  relative bg-gradient-to-b from-black">
+      <VideoBackground
+        movieId={id}
+        backdrop_path={backdrop_path}
+        className="bg-gradient-to-b from-black "
+      />
       <VideoTitle title={original_title} overview={overview} />
     </div>
   );

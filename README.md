@@ -10,6 +10,7 @@
 - Sign In
 - Browse
 - Authentication
+- Multiple Language Support
 - created Redux
 - - Header
   - Main Movies
