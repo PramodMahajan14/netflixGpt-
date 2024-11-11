@@ -1,17 +1,23 @@
 import React from "react";
 import { IMG_CDN_URL } from "../util/constant";
 import { ReactComponent as PlayIcon } from "../assets/playl.svg";
+import useIsSmallScreen from "../Hooks/useIsSmallScreen";
 
-const Searchcard = () => {
+const Searchcard = ({ backdrop_path, poster_path, original_title }) => {
+  const isSmallScreen = useIsSmallScreen();
+  const imageUrl = `${IMG_CDN_URL}${
+    isSmallScreen ? backdrop_path : poster_path
+  }`;
+
   return (
-    <div className="w-screen h-16 flex items-center bg-gray-500 justify-between pr-1 my-1 sm:w-44 md:w-40  sm:p-0 sm:m-2 sm:h-60">
-      <div className="w-1/3 h-full flex items-center text-white sm:w-full sm:h-full">
+    <div className="w-screen min-h-16 max-h-auto flex items-center bg-gray-500 justify-between pr-1 my-1 sm:w-44 md:w-40  sm:p-0 sm:m-2 sm:h-60">
+      <div className="w-auto min-h-16 max-h-auto flex items-center text-white sm:w-full sm:h-full">
         <img
-          src={IMG_CDN_URL + "/3V4kLQg0kSqPLctI5ziYWabAZYF.jpg"}
+          src={imageUrl}
           alt="image"
-          className="h-full w-full"
+          className="min-h-16 h-full w-1/3 sm:w-full"
         />{" "}
-        <span className=" mx-3 sm:hidden ">Creation</span>
+        <span className=" ml-3 sm:hidden ">{original_title}</span>
       </div>
       <i className="list-none text-white sm:hidden">
         <PlayIcon />

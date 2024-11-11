@@ -6,6 +6,7 @@ import SecondaryContainer from "./SecondaryContainer";
 import usePopularMovies from "../Hooks/usePopularMovies";
 import { useSelector } from "react-redux";
 import SearchhMovies from "./SearchMovies";
+import Footer from "./Footer";
 
 const Browse = () => {
   const searchpageOpen = useSelector((store) => store.app.showSearchBar);
@@ -23,6 +24,8 @@ const Browse = () => {
           <SecondaryContainer />)
         </>
       )}
+
+      <Footer />
     </div>
   );
 };

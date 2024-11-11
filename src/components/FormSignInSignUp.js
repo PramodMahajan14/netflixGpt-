@@ -215,7 +215,9 @@ const FormSignInSignUp = () => {
         className="w-full px-3 py-2 text-white rounded-md border-none bg-red-700 opacity-100"
         type="submit"
       >
-        {langauges[appLang].signinbutton}
+        {SignIN
+          ? langauges[appLang].signinbutton
+          : langauges[appLang].signupbutton}
       </button>
       <div className="flex w-full justify-center mx-0 my-2">
         <p className="text-white text-center font-semibold text-sm">
@@ -247,8 +249,8 @@ const FormSignInSignUp = () => {
           }}
         >
           {SignIN
-            ? langauges[appLang].sign_up_now
-            : langauges[appLang].signinbutton}
+            ? langauges[appLang].signinbutton
+            : langauges[appLang].signupbutton}
         </span>
       </span>
       <p className="text-neutral-400 text-sm my-2">

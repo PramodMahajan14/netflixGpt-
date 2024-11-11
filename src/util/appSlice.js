@@ -5,6 +5,7 @@ const appSlice = createSlice({
   initialState: {
     showSearchBar: false,
     lang: "en",
+    loader: false,
   },
 
   reducers: {
@@ -17,10 +18,13 @@ const appSlice = createSlice({
     changeLanguage: (state, action) => {
       state.lang = action.payload;
     },
+    setLoader: (state, action) => {
+      state.loader = action.payload;
+    },
   },
 });
 
-export const { toggleSearchBar, closedSearch, changeLanguage } =
+export const { toggleSearchBar, closedSearch, changeLanguage, setLoader } =
   appSlice.actions;
 
 export default appSlice.reducer;

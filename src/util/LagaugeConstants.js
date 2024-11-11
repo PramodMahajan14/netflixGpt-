@@ -19,7 +19,8 @@ export const langauges = {
     // SignIn-SingOut
     signinheader: "SIGN IN",
     signoutheader: "SIGN UP",
-    signinbutton: "Sign-in",
+    signinbutton: "Sign-In",
+    signupbutton: "Sign-Up",
     or: "OR",
     use_a_sign_code: "Use a sign-in code",
     remember_me: "Remember me",
@@ -33,6 +34,24 @@ export const langauges = {
     // Search Movies
     search_placeholder: "Search for a show, Movies,gener... etc",
     top_searches: "Top Searches",
+
+    // Footer
+    audio_description: "Audio Description",
+    investore_relations: "Investore Relations",
+    privacy: "Privacy",
+    contact_us: "Contact Us",
+    help_center: "Help Center",
+    jobs: "Jobs",
+    legal_notices: "Legal Notices",
+    do_not_sell_or_share_my_personal_information:
+      "Do Not Sell or Share My Personal Information",
+    gift_cards: "Gift Cards",
+    netfli_shop: "Netflix shop",
+    cookies_prefernces: " Cookies Prefernces",
+    add_choices: "Add Choices",
+    media_center: "Media Center",
+    terms_of_use: "Terms of Use",
+    corporate_information: "Corporate Information",
   },
   hindi: {
     // browse
@@ -68,5 +87,23 @@ export const langauges = {
     // Search Movies
     search_placeholder: "कोई शो, फ़िल्में, सामान्य... आदि खोजें",
     top_searches: "शीर्ष खोजें",
+
+    // Footer
+    audio_description: "ऑडियो विवरण",
+    investore_relations: "निवेशक संबंध",
+    privacy: "गोपनीयता",
+    contact_us: "संपर्क करें",
+    help_center: "सहायता केंद्र",
+    jobs: "नौकरियों",
+    legal_notices: "कानूनी नोटिस",
+    do_not_sell_or_share_my_personal_information:
+      "मेरी व्यक्तिगत जानकारी न बेचें या साझा न करें",
+    gift_cards: "उपहार कार्ड",
+    netfli_shop: "नेटफ्लिक्स शॉप",
+    cookies_prefernces: " कुकीज़ प्राथमिकता",
+    add_choices: "विकल्प जोड़ें",
+    media_center: "मीडिया सेंटर",
+    terms_of_use: "उपयोग की शर्तें",
+    corporate_information: "कॉर्पोरेट जानकारी",
   },
 };

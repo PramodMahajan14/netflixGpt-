@@ -18,6 +18,9 @@
     - Tittle & description
     - Movie Suggestions
       - Movies Lists
+  - Movies Search
+    - Movies list
+  - Footer
 
 - NetFlix GPT
   - Search Bar

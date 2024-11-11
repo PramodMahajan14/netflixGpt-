@@ -202,31 +202,9 @@ const Header = ({ isSign = true }) => {
         </div>
       </div>
 
-      {!User?.email && (
-        <div className="flex col-span-10 justify-end  items-center relative">
-          <select
-            id="countries"
-            className="mx-2 my-1 px-4 py-1 flex  text-center bg-transparent text-white  rounded-md  border-[2px] border-neutral-300 hover:border-white"
-            onChange={(e) => dispatch(changeLanguage(e.target.value))}
-          >
-            {SUPPORTED_LANGAUGES.map((lang) => (
-              <option
-                key={lang.identifier}
-                value={lang.identifier}
-                className="text-slate-700"
-              >
-                {lang.name}
-              </option>
-            ))}
-          </select>
-          <button className="py-2 px-5 rounded-md border-none bg-red-500 font-semibold text-white text-sm">
-            {langauges[appLang].signinbutton}
-          </button>
-        </div>
-      )}
       {dropdownShow && User?.email && (
         <div
-          className="absolute right-3 top-14 z-10 mt-2 w-28 py-2 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none
+          className="absolute right-5 top-14 z-10 mt-2 w-auto py-2 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none
   "
         >
           <li className="list-none items-center my-1 hover:bg-indigo-100 px-1 py-0  text-sm rounded-sm mx-1 flex  cursor-pointer">

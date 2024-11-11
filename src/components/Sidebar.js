@@ -5,7 +5,7 @@ import { AppContext, AppProvider } from "../context/AppProvider";
 const Sidebar = () => {
   const { isSidebarOpen } = useContext(AppContext);
   const [expandSubMenu, setExpandSubMenu] = useState(false);
-  console.log("Values ", isSidebarOpen);
+
   return <></>;
 };
 

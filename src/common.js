@@ -8,4 +8,4 @@ const FindDuplicateNumber = (nums) => {
     .map(Number);
 };
 
-console.log(FindDuplicateNumber([87, 98, 55, 89, 98, 77]));
+// console.log(FindDuplicateNumber([87, 98, 55, 89, 98, 77]));
