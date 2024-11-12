@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ReactComponent as MicIcon } from "../assets/microphone.svg";
-import { ReactComponent as LeftArrow } from "../assets/leftArrow.svg";
-import { ReactComponent as SearchIcon } from "../assets/search.svg";
+import { ReactComponent as MicIcon } from "../Assets/microphone.svg";
+import { ReactComponent as LeftArrow } from "../Assets/leftArrow.svg";
+import { ReactComponent as SearchIcon } from "../Assets/search.svg";
 
 import { useDispatch, useSelector } from "react-redux";
 import { closedSearch } from "../util/appSlice";

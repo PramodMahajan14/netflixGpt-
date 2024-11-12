@@ -1,9 +1,9 @@
 import React from "react";
-import { ReactComponent as FaceBookIcon } from "../assets/facebook.svg";
-import { ReactComponent as InstagramIcon } from "../assets/Instgram.svg";
-import { ReactComponent as TwitterIcon } from "../assets/twitter.svg";
-import { ReactComponent as YouTubeIcon } from "../assets/youtube.svg";
-import { ReactComponent as LangaugeIcon } from "../assets/Language.svg";
+import { ReactComponent as FaceBookIcon } from "../Assets/facebook.svg";
+import { ReactComponent as InstagramIcon } from "../Assets/Instgram.svg";
+import { ReactComponent as TwitterIcon } from "../Assets/twitter.svg";
+import { ReactComponent as YouTubeIcon } from "../Assets/youtube.svg";
+
 import { SUPPORTED_LANGAUGES } from "../util/constant";
 import { useDispatch, useSelector } from "react-redux";
 import { changeLanguage } from "../util/appSlice";

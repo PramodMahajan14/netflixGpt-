@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as PlayIcon } from "../assets/play.svg";
+import { ReactComponent as PlayIcon } from "../Assets/play.svg";
 
 const VideoTitle = ({ title, overview }) => {
   return (

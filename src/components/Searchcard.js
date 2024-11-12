@@ -1,6 +1,6 @@
 import React from "react";
 import { IMG_CDN_URL } from "../util/constant";
-import { ReactComponent as PlayIcon } from "../assets/playl.svg";
+import { ReactComponent as PlayIcon } from "../Assets/playl.svg";
 import useIsSmallScreen from "../Hooks/useIsSmallScreen";
 
 const Searchcard = ({ backdrop_path, poster_path, original_title }) => {

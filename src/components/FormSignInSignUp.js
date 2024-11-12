@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { ReactComponent as EyeOff } from "../assets/eyeoff.svg";
-import { ReactComponent as EyeOn } from "../assets/eyeon.svg";
-import { ReactComponent as Xcricle } from "../assets/Remove.svg";
+import { ReactComponent as EyeOff } from "../Assets/eyeoff.svg";
+import { ReactComponent as EyeOn } from "../Assets/eyeon.svg";
+import { ReactComponent as Xcricle } from "../Assets/Remove.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import {
