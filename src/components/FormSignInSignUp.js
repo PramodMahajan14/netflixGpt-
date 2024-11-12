@@ -49,6 +49,7 @@ const signInValidationSchema = Yup.object({
 
 const FormSignInSignUp = () => {
   const [SignIN, setSignIN] = useState(true);
+  const [Isloader, setIsloader] = useState(false);
   const [ErrorMessge, setErrorMessage] = useState("");
   const [texthide, setTextHide] = useState(false);
   const [FieldType, setFieldType] = useState("password");
@@ -70,6 +71,7 @@ const FormSignInSignUp = () => {
 
     onSubmit: async (values) => {
       try {
+        setIsloader(true);
         const submissionValues = { ...values };
         if (SignIN) {
           delete submissionValues.name;
@@ -94,7 +96,9 @@ const FormSignInSignUp = () => {
             addUser({ uid: uid, email: email, displayName: displayName })
           );
         }
+        setIsloader(false);
       } catch ({ message, code }) {
+        setIsloader(false);
         setErrorMessage(message + "-" + code);
         setTimeout(() => {
           setErrorMessage(null);
@@ -215,7 +219,9 @@ const FormSignInSignUp = () => {
         className="w-full px-3 py-2 text-white rounded-md border-none bg-red-700 opacity-100"
         type="submit"
       >
-        {SignIN
+        {Isloader
+          ? "Loading ... "
+          : SignIN
           ? langauges[appLang].signinbutton
           : langauges[appLang].signupbutton}
       </button>

@@ -25,7 +25,7 @@ const Browse = () => {
         </>
       )}
 
-      <Footer />
+      <Footer className="absolute bottom-0" />
     </div>
   );
 };

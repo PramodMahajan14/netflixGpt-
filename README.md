@@ -34,4 +34,4 @@
 
 # App Deployed
 
--url => https://gpt-netflix-77dfe.web.app
+-url => https://netflixgpt-bril.onrender.com/
