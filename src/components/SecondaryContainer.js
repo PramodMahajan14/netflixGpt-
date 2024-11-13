@@ -8,6 +8,8 @@ const SecondaryContainer = () => {
   const movie = useSelector((store) => store.movies);
   const popular = useSelector((store) => store.movies);
   const appLang = useSelector((store) => store.app.lang);
+
+  if (!movie) return <h1>Loading ...</h1>;
   return (
     <div className="w-auto  text-white relative -mt-28 z-10 ">
       <MoviesList

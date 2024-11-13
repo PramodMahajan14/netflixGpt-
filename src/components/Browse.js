@@ -12,13 +12,14 @@ const Browse = () => {
   usePopularMovies();
 
   return (
-    <div className="min-w-screen overflow-x-hidden  h-dvh sm:pb-0 pb-4 bg-black relative">
+    <>
       <Header />
+      <div className="min-w-screen overflow-x-hidden  h-dvh sm:pb-0 pb-4 bg-black relative">
+        <Outlet />
 
-      <Outlet />
-
-      <Footer className="absolute bottom-0" />
-    </div>
+        <Footer className="absolute bottom-0" />
+      </div>
+    </>
   );
 };
 

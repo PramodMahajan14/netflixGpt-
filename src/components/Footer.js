@@ -13,7 +13,7 @@ const Footer = () => {
   const dispatch = useDispatch();
   const appLang = useSelector((store) => store.app.lang);
   return (
-    <div className="mx-auto w-full max-w-screen-xl pb-5">
+    <div className="mx-auto w-full max-w-screen-xl pb-3 mt-10">
       <div className="flex items-center text-white">
         <li className="list-none mx-2 p-1">
           <FaceBookIcon />

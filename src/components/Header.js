@@ -30,6 +30,7 @@ const Header = ({ isSign = true }) => {
   const [dropdownShow, setdropdownShow] = useState(false);
   const dropdownRef = useRef(null);
   const appLang = useSelector((store) => store.app.lang);
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -50,7 +51,7 @@ const Header = ({ isSign = true }) => {
     dispatch(closedSearch());
   };
   const handleSearchClick = () => {
-    window.location = "/browse/search";
+    navigate("/browse/search");
   };
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -153,7 +154,7 @@ const Header = ({ isSign = true }) => {
             href="#"
             class="px-2 py-1 flex flex-col items-center justify-center hover:text-white text-slate-300 "
           >
-            <HomeIcon onClick={() => (window.location = "/browse")} />
+            <HomeIcon onClick={() => navigate("/browse")} />
             <p className="text-center text-xs ">Home</p>
           </a>
           <a
@@ -162,6 +163,7 @@ const Header = ({ isSign = true }) => {
             onClick={handleSearchClick}
           >
             <SearchIcon />
+
             <p className="text-center text-xs align-center ">Search</p>
           </a>
           <a class=" px-1 py-1 flex flex-col items-center justify-center text-slate-300 ">

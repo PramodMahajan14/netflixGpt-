@@ -7,47 +7,47 @@ import SearchhMovies from "./SearchMovies";
 
 import { AuthProvider } from "../context/AuthContext";
 import PublicRoute from "../context/PublicRoute";
-import MainContainer from "./MainContainer";
-import SecondaryContainer from "./SecondaryContainer";
+
 import Home from "./Home";
 
-const Body = () => {
-  const appRouter = createBrowserRouter([
-    {
-      path: "/",
-      element: <PublicRoute />,
-      children: [
-        {
-          path: "/",
-          element: <SignIn />,
-        },
-      ],
-    },
-    {
-      path: "/browse",
-      element: <ProtectedRoute />,
-      children: [
-        {
-          path: "/browse",
-          element: <Browse />,
-          children: [
-            {
-              path: "",
-              element: <Home />,
-            },
-            {
-              path: "search",
-              element: <SearchhMovies />,
-            },
-            {
-              path: "moviedetail/:MovieId",
-            },
-          ],
-        },
-      ],
-    },
-  ]);
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <PublicRoute />,
+    children: [
+      {
+        path: "/",
+        element: <SignIn />,
+      },
+    ],
+  },
+  {
+    path: "/browse",
+    element: <ProtectedRoute />,
+    children: [
+      {
+        path: "/browse",
+        element: <Browse />,
+        children: [
+          {
+            path: "",
+            element: <Home />,
+          },
+          {
+            path: "search",
+            element: <SearchhMovies />,
+          },
+          {
+            path: "moviedetail/:MovieId",
+            element: <h1>hgj</h1>, // Make sure to add this element
+          },
+        ],
+      },
+    ],
+  },
+]);
 
+const Body = () => {
   return (
     <AuthProvider>
       <RouterProvider router={appRouter} />

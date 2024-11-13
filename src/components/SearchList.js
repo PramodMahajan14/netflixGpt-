@@ -13,6 +13,7 @@ const SubMovieList = ({ movies }) => {
             backdrop_path={movie.backdrop_path}
             poster_path={movie.poster_path}
             original_title={movie.original_title}
+            movieId={movie.id}
           />
         ))}
       </div>
@@ -33,14 +34,13 @@ const SearchList = () => {
       <h1 className="text-white font-bold text-2xl mx-2 my-2 md:mx-10">
         {langauges[appLang].top_searches}
       </h1>
-      {/* <div className="w-full h-auto sm:flex sm:flex-wrap sm:justify-center "> */}
+
       {searchedMoviesName?.map((name, index) => (
         <div className="w-full h-auto block p-0 m-0">
           <h4 className="text-white mx-3 sm:px-10">{name}</h4>
           <SubMovieList movies={searchedMovies[index]} />
         </div>
       ))}
-      {/* </div> */}
     </div>
   );
 };

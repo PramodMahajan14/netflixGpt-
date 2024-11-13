@@ -4,24 +4,29 @@ import { ReactComponent as LeftArrow } from "../Assets/leftArrow.svg";
 import { ReactComponent as SearchIcon } from "../Assets/search.svg";
 
 import { useDispatch, useSelector } from "react-redux";
-import { closedSearch, toggleSearchBar } from "../util/appSlice";
+import { closedSearch, closeModal, toggleSearchBar } from "../util/appSlice";
 import SearchList from "./SearchList";
-import openai from "../util/openAI";
-import { API_OPTIONS } from "../util/constant";
-import { addSearchResults } from "../util/moviesSlice";
+
 import useSearchMovies from "../Hooks/useSearchMovies";
 import Loader from "./Loader";
+import MovieModal from "./MovieDetail/MovieModal";
+import SelectedMovie from "./MovieDetail/SelectedMovie";
+import { useNavigate } from "react-router-dom";
 
 const SearchhMovies = () => {
   const isLoader = useSelector((store) => store.app.loader);
+
   const handleSearchMovies = useSearchMovies();
   const dispatch = useDispatch();
+  const isModalOpen = useSelector((store) => store.app.movieModalOpen);
+
+  const closemodal = () => dispatch(closeModal());
 
   const [isExpanded, setIsExpanded] = useState(false);
   const [Query, setQuery] = useState("");
   const [QuerySmall, setQuerySmall] = useState("");
   const searchMoviesRef = useRef(null);
-
+  const navigate = useNavigate();
   const toggleSearch = () => {
     setIsExpanded(!isExpanded);
   };
@@ -73,7 +78,7 @@ const SearchhMovies = () => {
         <div className="hidden  justify-between sm:flex items-center sm:pl-1 md:pl-5 md:pr-10 pr-2 py-2 text-white ">
           <li
             className="list-none p-[2px] rounded-full hover:bg-neutral-400 cursor-pointer"
-            onClick={() => (window.location = "/browse")}
+            onClick={() => navigate("/browse")}
           >
             <LeftArrow className="size-9" />
           </li>
@@ -107,6 +112,9 @@ const SearchhMovies = () => {
         </div>
 
         {isLoader ? <Loader /> : <SearchList />}
+        <MovieModal isOpen={isModalOpen} onClose={closemodal}>
+          <SelectedMovie />
+        </MovieModal>
       </div>
     </>
   );
