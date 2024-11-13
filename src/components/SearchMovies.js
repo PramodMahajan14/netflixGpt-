@@ -54,12 +54,20 @@ const SearchhMovies = () => {
       handleSearchMovies(Query);
     }
   };
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (Query.trim()) {
+      handleSearchMovies(Query);
+    }
+  };
   return (
     <>
       <div className="w-screen h-dvh" ref={searchMoviesRef}>
         <div className="w-full h-14 bg-gray-500 sm:hidden fixed top-0 ">
-          <div className="w-full h-full flex items-center px-3 text-white">
+          <form
+            onSubmit={handleSubmit}
+            className="w-full h-full flex items-center px-3 text-white"
+          >
             <li className="list-none p-1">{/* <SearchIcon /> */}</li>{" "}
             <input
               type="text"
@@ -73,7 +81,7 @@ const SearchhMovies = () => {
               {" "}
               <MicIcon />
             </li>
-          </div>
+          </form>
         </div>
         <div className="hidden  justify-between sm:flex items-center sm:pl-1 md:pl-5 md:pr-10 pr-2 py-2 text-white ">
           <li
