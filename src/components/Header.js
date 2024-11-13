@@ -134,13 +134,13 @@ const Header = ({ isSign = true }) => {
               </ul>
 
               <div className="col-span-3 flex items-center text-white  cursor-pointer justify-between relative sm:hidden ">
-                <li className="mx-3 py-[1px] px-[10px] text-xl list-none hover:bg-gray-200 rounded-sm">
+                <li className="mx-2 py-[1px] px-[10px] text-xl list-none hover:bg-gray-200 rounded-sm">
                   {langauges[appLang].tvshow}
                 </li>
-                <li className="mx-4 py-[1px] text-xl px-[5x] list-none hover:bg-gray-200 rounded-sm">
+                <li className="mx-2 py-[1px] text-xl px-[1x] list-none hover:bg-gray-200 rounded-sm">
                   {langauges[appLang].movies}
                 </li>
-                <li className="mx-4 py-[1px] text-xl px-[5px] list-none hover:bg-gray-200 rounded-sm">
+                <li className="mx-2 py-[1px] text-xl px-[2px] list-none hover:bg-gray-200 rounded-sm">
                   {langauges[appLang].mylist}
                 </li>
               </div>
