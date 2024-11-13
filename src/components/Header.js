@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { ReactComponent as LogoIconLg } from "../Assets/Logo.svg";
-import { ReactComponent as LanguageIcon } from "../Assets/Language.svg";
+
 import { ReactComponent as SearchIcon } from "../Assets/search.svg";
 import { ReactComponent as BellIcon } from "../Assets/bell.svg";
 import { ReactComponent as SmallUserIcon } from "../Assets/SmallAvatar.svg";
@@ -13,19 +13,16 @@ import { ReactComponent as CommingIcon } from "../Assets/commingSoon.svg";
 import { ReactComponent as DownloadIcon } from "../Assets/download.svg";
 import { ReactComponent as MoreIcon } from "../Assets/more.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 
 import { auth } from "../util/firebase";
 
-import { addUser, removeUser } from "../util/userSlice";
-import { useNavigate } from "react-router-dom";
-import {
-  changeLanguage,
-  closedSearch,
-  toggleSearchBar,
-} from "../util/appSlice";
-import { SUPPORTED_LANGAUGES } from "../util/constant";
+import { removeUser } from "../util/userSlice";
+
+import { closedSearch, toggleSearchBar } from "../util/appSlice";
+
 import { langauges } from "../util/LagaugeConstants";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ isSign = true }) => {
   const User = useSelector((store) => store.user);
@@ -33,7 +30,7 @@ const Header = ({ isSign = true }) => {
   const [dropdownShow, setdropdownShow] = useState(false);
   const dropdownRef = useRef(null);
   const appLang = useSelector((store) => store.app.lang);
-  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const handleSignOut = async () => {
@@ -52,33 +49,19 @@ const Header = ({ isSign = true }) => {
   const closeSearchPage = () => {
     dispatch(closedSearch());
   };
+  const handleSearchClick = () => {
+    window.location = "/browse/search";
+  };
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // login user or get a user data
-        const { uid, email, displayName } = user;
-        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
-        navigate("/browse");
-      } else {
-        // logout user
-        dispatch(removeUser());
-        navigate("/");
-      }
-    });
-
-    // ===---DowpDown
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setdropdownShow(false);
       }
     };
 
-    // Bind the event listener
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      // Unbind the event listener on cleanup
       document.removeEventListener("mousedown", handleClickOutside);
-      unsubscribe();
     };
   }, []);
 
@@ -132,7 +115,7 @@ const Header = ({ isSign = true }) => {
               <ul className=" text-white  col-span-auto lg:col-span-2 justify-end hidden sm:flex">
                 <li
                   className="mx-3 md:mx-2 py-[1px] px-[2px] cursor-pointer"
-                  onClick={togglerSeach}
+                  onClick={handleSearchClick}
                 >
                   <SearchIcon />
                 </li>
@@ -170,13 +153,13 @@ const Header = ({ isSign = true }) => {
             href="#"
             class="px-2 py-1 flex flex-col items-center justify-center hover:text-white text-slate-300 "
           >
-            <HomeIcon onClick={closeSearchPage} />
+            <HomeIcon onClick={() => (window.location = "/browse")} />
             <p className="text-center text-xs ">Home</p>
           </a>
           <a
             href="#"
             class=" px-1 py-1 flex flex-col items-center justify-center text-slate-300 "
-            onClick={togglerSeach}
+            onClick={handleSearchClick}
           >
             <SearchIcon />
             <p className="text-center text-xs align-center ">Search</p>

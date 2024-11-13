@@ -13,6 +13,7 @@ import { auth } from "../util/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../util/userSlice";
 import { langauges } from "../util/LagaugeConstants";
+import { useNavigate } from "react-router-dom";
 
 const signUpValidationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -55,6 +56,7 @@ const FormSignInSignUp = () => {
   const [FieldType, setFieldType] = useState("password");
   const [Eyeoff, setEyeOff] = useState(true);
   const appLang = useSelector((store) => store.app.lang);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const initialValues = SignIN
@@ -80,6 +82,8 @@ const FormSignInSignUp = () => {
             values.email,
             values.password
           );
+          navigate("/browse");
+          console.log("jsh");
         } else {
           // Sign - Up
           const response = await createUserWithEmailAndPassword(

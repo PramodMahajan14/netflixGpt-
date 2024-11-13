@@ -4,7 +4,7 @@ import { ReactComponent as LeftArrow } from "../Assets/leftArrow.svg";
 import { ReactComponent as SearchIcon } from "../Assets/search.svg";
 
 import { useDispatch, useSelector } from "react-redux";
-import { closedSearch } from "../util/appSlice";
+import { closedSearch, toggleSearchBar } from "../util/appSlice";
 import SearchList from "./SearchList";
 import openai from "../util/openAI";
 import { API_OPTIONS } from "../util/constant";
@@ -27,7 +27,7 @@ const SearchhMovies = () => {
   };
 
   useEffect(() => {
-    // Closed SearchBar
+    dispatch(toggleSearchBar());
     const handleClickOutside = (event) => {
       if (
         searchMoviesRef.current &&
@@ -37,9 +37,9 @@ const SearchhMovies = () => {
       }
     };
 
-    // Bind the event listener
     document.addEventListener("mousedown", handleClickOutside);
-  });
+    return () => dispatch(closedSearch());
+  }, []);
 
   const handleSearchLargeDevice = (e) => {
     handleSearchMovies(Query);
@@ -49,6 +49,7 @@ const SearchhMovies = () => {
       handleSearchMovies(Query);
     }
   };
+
   return (
     <>
       <div className="w-screen h-dvh" ref={searchMoviesRef}>
@@ -72,7 +73,7 @@ const SearchhMovies = () => {
         <div className="hidden  justify-between sm:flex items-center sm:pl-1 md:pl-5 md:pr-10 pr-2 py-2 text-white ">
           <li
             className="list-none p-[2px] rounded-full hover:bg-neutral-400 cursor-pointer"
-            onClick={() => dispatch(closedSearch())}
+            onClick={() => (window.location = "/browse")}
           >
             <LeftArrow className="size-9" />
           </li>
