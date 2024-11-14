@@ -140,25 +140,25 @@ const Header = ({ isSign = true }) => {
           )}
         </div>
       )}
-      <div class="sm:hidden" id="mobile-menu">
-        <div class="fixed flex bottom-0 w-full justify-around px-2  border-t-[1px] z-1 bg-gray-500">
+      <div className="sm:hidden" id="mobile-menu">
+        <div className="fixed flex bottom-0 w-full justify-around px-2  border-t-[1px] z-1 bg-gray-500">
           <a
             href="#"
-            class="px-2 py-1 flex flex-col items-center justify-center hover:text-white text-slate-300 "
+            className="px-2 py-1 flex flex-col items-center justify-center hover:text-white text-slate-300 "
           >
             <HomeIcon onClick={() => navigate("/browse")} />
             <p className="text-center text-xs ">Home</p>
           </a>
           <a
             href="#"
-            class=" px-1 py-1 flex flex-col items-center justify-center text-slate-300 "
+            className=" px-1 py-1 flex flex-col items-center justify-center text-slate-300 "
             onClick={handleSearchClick}
           >
             <SearchIcon />
 
-            <p className="text-center text-xs align-center ">Search</p>
+            <p classNameName="text-center text-xs align-center ">Search</p>
           </a>
-          <a class=" px-1 py-1 flex flex-col items-center justify-center text-slate-300 ">
+          <a className=" px-1 py-1 flex flex-col items-center justify-center text-slate-300 ">
             <CommingIcon />
             <p className="text-center text-xs">Comming Soon</p>
           </a>

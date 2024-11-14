@@ -5,7 +5,7 @@ const MovieCardSk = () => {
     <div className="h-auto    px-1  py-2 sm:p-0 ">
       <div class="flex items-center justify-center  bg-gray-300   dark:bg-gray-700 min-h-40  min-w-28   sm:h-40 sm:w-72 sm:min-w-48  rounded-sm  md:mx-1">
         <svg
-          class="w-10 h-10 text-gray-200 dark:text-gray-600 "
+          className="w-10 h-10 text-gray-200 dark:text-gray-600 "
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
