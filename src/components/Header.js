@@ -20,7 +20,7 @@ import { auth } from "../util/firebase";
 import { removeUser } from "../util/userSlice";
 
 import { langauges } from "../util/LagaugeConstants";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = ({ isSign = true }) => {
   const User = useSelector((store) => store.user);
@@ -144,19 +144,33 @@ const Header = ({ isSign = true }) => {
         <div className="fixed flex bottom-0 w-full justify-around px-2  border-t-[1px] z-1 bg-gray-500">
           <a
             href="#"
-            className="px-2 py-1 flex flex-col items-center justify-center hover:text-white text-slate-300 "
+            className="px-2 py-1 flex flex-col items-center justify-center   "
           >
-            <HomeIcon onClick={() => navigate("/browse")} />
-            <p className="text-center text-xs ">Home</p>
+            <NavLink
+              to="/browse"
+              className={({ isActive }) =>
+                isActive ? "text-white " : "text-slate-300"
+              }
+            >
+              <HomeIcon />
+              <p className="text-center text-xs ">Home</p>
+            </NavLink>
           </a>
           <a
             href="#"
-            className=" px-1 py-1 flex flex-col items-center justify-center text-slate-300 "
-            onClick={handleSearchClick}
+            className=" px-1 py-1 flex flex-col items-center justify-center  "
           >
-            <SearchIcon />
-
-            <p classNameName="text-center text-xs align-center ">Search</p>
+            <NavLink
+              to="/browse/search"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white flex-col items-center justify-center"
+                  : "text-slate-300"
+              }
+            >
+              <SearchIcon />
+              <p classNameName="text-center text-xs align-center ">Search</p>
+            </NavLink>
           </a>
           <a className=" px-1 py-1 flex flex-col items-center justify-center text-slate-300 ">
             <CommingIcon />
