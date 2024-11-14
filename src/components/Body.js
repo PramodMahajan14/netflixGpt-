@@ -26,7 +26,6 @@ const appRouter = createBrowserRouter([
     element: <ProtectedRoute />,
     children: [
       {
-        path: "/browse",
         element: <Browse />,
         children: [
           {
