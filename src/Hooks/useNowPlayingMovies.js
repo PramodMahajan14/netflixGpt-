@@ -11,7 +11,7 @@ const useNowPlayingMovies = () => {
   const fetechMovies = async () => {
     try {
       const resp = await fetch(
-        "https://api.themoviedb.org/3/movie/now_playing?page=1",
+        "https://api.themoviedb.org/3/movie/now_playing?page=1&language=hi-IN&region=IN",
         API_OPTIONS
       );
       const jsonData = await resp.json();

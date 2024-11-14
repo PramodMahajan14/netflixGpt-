@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useMovieDetail from "../../Hooks/useMovieDetail";
 import { IMG_CDN_URL } from "../../util/constant";
 import { ReactComponent as ClosedIcon } from "../../Assets/closed.svg";
 import { ReactComponent as PlayIcon } from "../../Assets/play.svg";
 import { ReactComponent as AddPlusIcon } from "../../Assets/roundedPlus.svg";
-import { closeModal } from "../../util/appSlice";
-import SelectedMovieSk from "../skeleton/SelectedMovieSk";
+import { closeModal, setPreview } from "../../util/appSlice";
+import SelectedMovieSk from "../Skeleton/SelectedMovieSk";
 
 const SelectedMovie = () => {
   const movieId = useSelector((store) => store.app.selectedMovieId);
   const movie = useMovieDetail(movieId);
   const dispatch = useDispatch();
-  console.log(movie);
+  const previewMovies = useSelector((store) => store.app.previewMovies);
+
+  useEffect(() => {
+    if (movie && !previewMovies?.some((m) => m.id === movie.id)) {
+      dispatch(setPreview(movie));
+    }
+  }, [movie, dispatch, previewMovies]);
 
   if (!movie) return <SelectedMovieSk />;
 

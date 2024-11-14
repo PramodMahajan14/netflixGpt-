@@ -7,7 +7,9 @@ const appSlice = createSlice({
     movieModalOpen: false,
     selectedMovieId: null,
     lang: "en",
+    region: "IN",
     loader: false,
+    preview: [],
   },
 
   reducers: {
@@ -32,6 +34,12 @@ const appSlice = createSlice({
     setSelectedMovieId: (state, action) => {
       state.selectedMovieId = action.payload;
     },
+    setRegion: (state, action) => {
+      state.region = action.payload;
+    },
+    setPreview: (state, action) => {
+      state.preview.push(action.payload);
+    },
   },
 });
 
@@ -43,6 +51,8 @@ export const {
   openModal,
   closeModal,
   setSelectedMovieId,
+  setRegion,
+  setPreview,
 } = appSlice.actions;
 
 export default appSlice.reducer;

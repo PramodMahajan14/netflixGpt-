@@ -52,8 +52,9 @@ export const langauges = {
     media_center: "Media Center",
     terms_of_use: "Terms of Use",
     corporate_information: "Corporate Information",
+    preview: "Preview",
   },
-  hindi: {
+  hi: {
     // browse
     home: "मुखपृष्ठ",
     tvshow: "टीवी शो",
@@ -105,5 +106,6 @@ export const langauges = {
     media_center: "मीडिया सेंटर",
     terms_of_use: "उपयोग की शर्तें",
     corporate_information: "कॉर्पोरेट जानकारी",
+    preview: "पूर्वावलोकन",
   },
 };

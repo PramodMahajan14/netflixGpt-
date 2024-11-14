@@ -4,14 +4,18 @@ import { useSelector } from "react-redux";
 import "./common.css";
 import { langauges } from "../util/LagaugeConstants";
 
+import PreviewList from "./Preview/PreviewList";
+import HomeSk from "./Skeleton/HomeSk";
+
 const SecondaryContainer = () => {
   const movie = useSelector((store) => store.movies);
   const popular = useSelector((store) => store.movies);
   const appLang = useSelector((store) => store.app.lang);
 
-  if (!movie) return <h1>Loading ...</h1>;
+  if (!movie) return <HomeSk />;
   return (
     <div className="w-auto  text-white relative -mt-28 z-10 ">
+      <PreviewList />
       <MoviesList
         title={langauges[appLang].nowplayingmovies}
         movies={movie.nowPlayingMovies}
