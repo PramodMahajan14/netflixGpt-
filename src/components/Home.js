@@ -4,7 +4,7 @@ import MovieModal from "./MovieDetail/MovieModal";
 import { useDispatch, useSelector } from "react-redux";
 import { closeModal } from "../util/appSlice";
 import SelectedMovie from "./MovieDetail/SelectedMovie";
-import HomeSk from "./Skeleton/HomeSk";
+import HomeSk from "./shimmrui/HomeSk";
 const MainContainer = React.lazy(() => import("./MainContainer"));
 const SecondaryContainer = React.lazy(() => import("./SecondaryContainer"));
 

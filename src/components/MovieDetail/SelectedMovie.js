@@ -6,7 +6,7 @@ import { ReactComponent as ClosedIcon } from "../../Assets/closed.svg";
 import { ReactComponent as PlayIcon } from "../../Assets/play.svg";
 import { ReactComponent as AddPlusIcon } from "../../Assets/roundedPlus.svg";
 import { closeModal, setPreview } from "../../util/appSlice";
-import SelectedMovieSk from "../Skeleton/SelectedMovieSk";
+import SelectedMovieSk from "../shimmrui/SelectedMovieSk";
 
 const SelectedMovie = () => {
   const movieId = useSelector((store) => store.app.selectedMovieId);

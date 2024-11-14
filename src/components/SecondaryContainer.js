@@ -5,7 +5,7 @@ import "./common.css";
 import { langauges } from "../util/LagaugeConstants";
 
 import PreviewList from "./Preview/PreviewList";
-import HomeSk from "./Skeleton/HomeSk";
+import HomeSk from "./shimmrui/HomeSk";
 
 const SecondaryContainer = () => {
   const movie = useSelector((store) => store.movies);
