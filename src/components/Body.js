@@ -1,6 +1,7 @@
 import React from "react";
 import {
   createBrowserRouter,
+  Outlet,
   Route,
   RouterProvider,
   Routes,
@@ -56,7 +57,9 @@ import Home from "./Home";
 //     element: <h1>404 - Page Not Found</h1>,
 //   },
 // ]);
-
+const MainBrowse = () => {
+  return <Browse child={<Outlet />} />;
+};
 const Body = () => {
   return (
     // <AuthProvider>
@@ -64,11 +67,11 @@ const Body = () => {
     // </AuthProvider>
     <AuthProvider>
       <Routes>
-        <Route element={<PublicRoute />}>
-          <Route path="/" element={<SignIn />} />
-        </Route>
+        {/* <Route element={<PublicRoute />}> */}
+        <Route path="/" element={<SignIn />} />
+        {/* </Route> */}
         <Route element={<ProtectedRoute />}>
-          <Route path="/browse" element={<Browse />}>
+          <Route path="/browse" element={<MainBrowse />}>
             <Route path="" element={<Home />} />
             <Route path="search" element={<SearchhMovies />} />
           </Route>
