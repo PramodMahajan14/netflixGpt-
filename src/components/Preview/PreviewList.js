@@ -6,6 +6,7 @@ import { langauges } from "../../util/LagaugeConstants";
 const PreviewList = () => {
   const preview_movies = useSelector((store) => store.app.preview);
   const lang = useSelector((store) => store.app.lang);
+  if (preview_movies.length === 0) return null;
   return (
     <div className="px-1 md:mx-4">
       <div>

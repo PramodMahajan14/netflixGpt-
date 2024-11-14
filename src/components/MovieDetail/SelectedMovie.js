@@ -23,7 +23,7 @@ const SelectedMovie = () => {
   if (!movie) return <SelectedMovieSk />;
 
   return (
-    <div className="w-full h-full shadow-md drop-shadow-md bg-gray-600 text-white rounded-lg max-h-[500px] overflow-y-scroll md:max-h-full md:overflow-hidden">
+    <div className="w-full h-full  shadow-md drop-shadow-md bg-gray-600 text-white rounded-lg max-h-[500px] overflow-y-scroll md:max-h-full md:overflow-hidden">
       <div className="w-full h-1/2 relative ">
         <img
           src={IMG_CDN_URL + movie?.backdrop_path}

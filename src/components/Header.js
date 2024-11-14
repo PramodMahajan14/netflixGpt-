@@ -19,8 +19,6 @@ import { auth } from "../util/firebase";
 
 import { removeUser } from "../util/userSlice";
 
-import { closedSearch, toggleSearchBar } from "../util/appSlice";
-
 import { langauges } from "../util/LagaugeConstants";
 import { useNavigate } from "react-router-dom";
 
@@ -44,12 +42,6 @@ const Header = ({ isSign = true }) => {
     }
   };
 
-  const togglerSeach = () => {
-    dispatch(toggleSearchBar());
-  };
-  const closeSearchPage = () => {
-    dispatch(closedSearch());
-  };
   const handleSearchClick = () => {
     navigate("/browse/search");
   };

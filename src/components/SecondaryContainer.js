@@ -12,7 +12,7 @@ const SecondaryContainer = () => {
   const popular = useSelector((store) => store.movies);
   const appLang = useSelector((store) => store.app.lang);
 
-  if (!movie) return <HomeSk />;
+  if (!movie || movie.length === 0) return <HomeSk />;
   return (
     <div className="w-auto  text-white relative -mt-28 z-10 ">
       <PreviewList />

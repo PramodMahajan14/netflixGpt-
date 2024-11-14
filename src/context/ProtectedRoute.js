@@ -3,12 +3,13 @@ import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 
 import Loader from "../components/Loader";
+import HomeSk from "../components/Skeleton/HomeSk";
 
 const ProtectedRoute = () => {
   const { user, loading } = useAuth();
 
   if (loading) {
-    return <Loader />;
+    return <HomeSk />;
   }
 
   return user ? <Outlet /> : <Navigate to="/" />;
