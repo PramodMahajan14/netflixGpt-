@@ -13,11 +13,13 @@ const Browse = () => {
 
   return (
     <>
-      <Header />
-      <div className="min-w-screen overflow-x-hidden min-h-screen h-dvh sm:pb-0 pb-4 bg-black relative">
-        <Outlet />
+      <div>
+        <Header />
+        <div className="min-w-screen overflow-x-hidden min-h-screen h-dvh sm:pb-0 pb-4 bg-black relative">
+          <Outlet />
 
-        <Footer className="fixed bottom-0" />
+          <Footer className="fixed bottom-0" />
+        </div>
       </div>
     </>
   );
