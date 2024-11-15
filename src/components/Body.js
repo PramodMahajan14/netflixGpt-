@@ -32,12 +32,11 @@ const appRouter = createBrowserRouter([
     element: <ProtectedRoute />,
     children: [
       {
-        index: true,
+        path: "/browse",
         element: <Browse />,
         children: [
           {
             path: "",
-
             element: <Home />,
           },
           {
