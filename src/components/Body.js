@@ -22,7 +22,7 @@ const appRouter = createBrowserRouter([
     element: <PublicRoute />,
     children: [
       {
-        path: "",
+        index: true,
         element: <SignIn />,
       },
     ],
@@ -35,7 +35,8 @@ const appRouter = createBrowserRouter([
         element: <Browse />,
         children: [
           {
-            index: true,
+            path: "",
+
             element: <Home />,
           },
           {
