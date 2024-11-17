@@ -15,6 +15,7 @@ import { AuthProvider } from "../context/AuthContext";
 import PublicRoute from "../context/PublicRoute";
 
 import Home from "./Home";
+import Tvshow from "./TvShow/Tvshow";
 
 const appRouter = createBrowserRouter([
   {
@@ -37,7 +38,12 @@ const appRouter = createBrowserRouter([
         children: [
           {
             path: "",
+
             element: <Home />,
+          },
+          {
+            path: "tvshow",
+            element: <Tvshow />,
           },
           {
             path: "search",

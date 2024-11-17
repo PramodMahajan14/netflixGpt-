@@ -21,7 +21,7 @@ const usePopularMovies = () => {
 
   useEffect(() => {
     !popularMovies && fetechPopularMovies();
-  });
+  }, []);
 };
 
 export default usePopularMovies;

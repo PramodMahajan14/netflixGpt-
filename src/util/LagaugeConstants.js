@@ -83,7 +83,7 @@ export const langauges = {
     email_placeholder: "ईमेल",
     password_placeholder: "पासवर्ड",
     name_placeholder: "नाम",
-    sign_up_now: "Sign up now",
+    sign_up_now: "साइन अप करें",
 
     // Search Movies
     search_placeholder: "कोई शो, फ़िल्में, सामान्य... आदि खोजें",

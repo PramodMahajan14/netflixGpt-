@@ -59,9 +59,9 @@ const Header = ({ isSign = true }) => {
   }, []);
 
   return (
-    <nav className="w-screen  fixed  z-50 top-0" ref={dropdownRef}>
+    <nav className="w-screen  fixed  z-50 top-0  " ref={dropdownRef}>
       {!searchPage && (
-        <div className=" lg:px-5 md:px-2 sm:px-2 relative grid grid-flow-col h-14 items-center bg-transparent">
+        <div className=" lg:px-5 md:px-2 sm:px-2 relative grid grid-flow-col h-14 items-center  border-b border-slate-400/10  bg-background-light/[0.85]  backdrop-blu">
           <h1 className="col-span-1 lg:col-span-2">
             <LogoIconLg className="hidden sm:block sm:size-24 p-0 lg:h-24 lg:w-28" />
             <LogoIconSm className="sm:hidden" />
@@ -69,24 +69,54 @@ const Header = ({ isSign = true }) => {
           {User?.email && (
             <>
               <div className="col-span-6 lg:col-span-7 items-center text-white  cursor-pointer hidden sm:hidden md:flex">
-                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none hover:bg-gray-300 hover:text-slate-700 rounded-sm ">
-                  {langauges[appLang].home}
+                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none  rounded-sm ">
+                  <NavLink
+                    to="/browse"
+                    className={({ isActive }) => (isActive ? "underline" : "")}
+                  >
+                    {langauges[appLang].home}
+                  </NavLink>
                 </li>
-                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none hover:bg-gray-200 rounded-sm ">
-                  {langauges[appLang].tvshow}
+                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none  rounded-sm ">
+                  <NavLink
+                    to="/browse/tvshow"
+                    className={({ isActive }) => (isActive ? "underline" : "")}
+                  >
+                    {langauges[appLang].tvshow}
+                  </NavLink>
                 </li>
                 <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none hover:bg-gray-200 rounded-sm">
-                  {langauges[appLang].movies}
+                  <NavLink
+                    to="/browse/movies"
+                    className={({ isActive }) => (isActive ? "underline" : "")}
+                  >
+                    {langauges[appLang].movies}
+                  </NavLink>
                 </li>
                 <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none hover:bg-gray-200 rounded-sm">
-                  {langauges[appLang].new_and_popular}
+                  <NavLink
+                    to="/browse/popular"
+                    className={({ isActive }) => (isActive ? "underline" : "")}
+                  >
+                    {langauges[appLang].new_and_popular}
+                  </NavLink>
                 </li>
 
                 <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none hover:bg-gray-200 rounded-sm">
-                  {langauges[appLang].mylist}
+                  <NavLink
+                    to="/browse/mylist"
+                    className={({ isActive }) => (isActive ? "underline" : "")}
+                  >
+                    {langauges[appLang].mylist}
+                  </NavLink>
                 </li>
                 <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none hover:bg-gray-200 rounded-sm">
-                  {langauges[appLang].browsebylanguage}
+                  <NavLink
+                    to="/browse"
+                    className={({ isActive }) => (isActive ? "langauges" : "")}
+                  >
+                    {langauges[appLang].browsebylanguage}
+                  </NavLink>
                 </li>
               </div>
 
@@ -94,8 +124,13 @@ const Header = ({ isSign = true }) => {
                 <li className="mx-2 py-[1px] px-[2px] md:mx-1 list-none hover:bg-gray-200 rounded-sm">
                   {langauges[appLang].home}
                 </li>
-                <li className="mx-2 py-[1px] px-[2px] md:mx-1 list-none hover:bg-gray-200 rounded-sm">
-                  {langauges[appLang].tvshow}
+                <li className="mx-2 py-[1px] px-[2px] md:mx-1 list-none  rounded-sm">
+                  <NavLink
+                    to="/browse/tvshow"
+                    className={({ isActive }) => (isActive ? "underline" : "")}
+                  >
+                    {langauges[appLang].tvshow}
+                  </NavLink>
                 </li>
                 <li className="mx-2 py-[1px] px-[2px] md:mx-1 list-none  hover:bg-gray-200 rounded-sm">
                   {langauges[appLang].movies}
@@ -141,7 +176,7 @@ const Header = ({ isSign = true }) => {
         </div>
       )}
       <div className="sm:hidden" id="mobile-menu">
-        <div className="fixed flex bottom-0 w-full justify-around px-2  border-t-[1px] z-1 bg-gray-500">
+        <div className="fixed flex bottom-0 w-full justify-around px-2  border-t-[1px] z-1 bg-gray-500 bg-background-light/[0.85]  backdrop-blu">
           <a
             href="#"
             className="px-2 py-1 flex flex-col items-center justify-center   "
