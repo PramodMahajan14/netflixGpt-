@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { API_OPTIONS } from "../util/constant";
 import { useDispatch, useSelector } from "react-redux";
 import { addTvshows } from "../util/moviesSlice";
+import { setLoader } from "../util/appSlice";
 
 const useTvShowdata = () => {
   const type = useSelector((store) => store.movies.movieTvshow);
@@ -20,6 +21,7 @@ const useTvShowdata = () => {
       const data = await resp.json();
 
       dispatch(addTvshows(data.results));
+      dispatch(setLoader(false));
     } catch (err) {
       console.log(err);
     }

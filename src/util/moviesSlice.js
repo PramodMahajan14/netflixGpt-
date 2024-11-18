@@ -11,6 +11,7 @@ const moviesSlice = createSlice({
     searchedMovies: null,
     tvShows: {
       tvList: null,
+      movieList: null,
       page: 1,
     },
   },
@@ -39,6 +40,9 @@ const moviesSlice = createSlice({
         state.tvShows.tvList = [...state.tvShows.tvList, ...action.payload];
       }
     },
+    increasePageNo: (state) => {
+      state.tvShows.page = state.tvShows.page + 1;
+    },
   },
 });
 
@@ -49,6 +53,7 @@ export const {
   addSearchResults,
   addTvshows,
   addMovieTvType,
+  increasePageNo,
 } = moviesSlice.actions;
 
 export default moviesSlice.reducer;

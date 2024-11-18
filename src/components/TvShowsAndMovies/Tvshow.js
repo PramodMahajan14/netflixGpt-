@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import TvList from "./TvList";
 import SortByTvshowOrMovie from "../SortByTvshowOrMovie";
+import { useDispatch, useSelector } from "react-redux";
+import { increasePageNo } from "../../util/moviesSlice";
+import { setLoader } from "../../util/appSlice";
+import useInfinitScrolling from "../../Hooks/useInfinitScrolling";
 
 const Tvshow = () => {
+  useInfinitScrolling();
   return (
-    <div className="w-screen text-center mx-0  text-3xl mt-16">
+    <div className="w-screen h-fit overflow-auto  text-center mx-0  text-3xl mt-16 pb-5">
       <SortByTvshowOrMovie
         typesTvOrMovie={[
           { name: "Airing Today", value: "airing_today" },
