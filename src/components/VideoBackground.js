@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import useMovieTrailer from "../Hooks/useMovieTrailer";
 import { IMG_CDN_URL } from "../util/constant";
-// import ReactPlayer from "react-player";
 
 const VideoBackground = ({ movieId, backdrop_path }) => {
   const trailerVideo = useSelector((store) => store.movies.trailerVideo);

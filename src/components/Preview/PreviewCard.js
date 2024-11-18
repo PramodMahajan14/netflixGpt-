@@ -3,10 +3,7 @@ import { IMG_CDN_URL } from "../../util/constant";
 
 const PreviewCard = ({ poster_path }) => {
   return (
-    <div
-      className="h-auto w-auto sm:w-1/4 md:w-1/5  px-1  py-2 rounded-full "
-      //   onClick={() => showMovieDetail(movieId)}
-    >
+    <div className="h-auto w-auto sm:w-1/4 md:w-1/5  px-1  py-2 rounded-full ">
       <img
         src={IMG_CDN_URL + poster_path}
         alt="Movie-Card"

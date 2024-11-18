@@ -1,11 +1,5 @@
-import React from "react";
-import {
-  BrowserRouter,
-  createBrowserRouter,
-  Route,
-  RouterProvider,
-  Routes,
-} from "react-router-dom";
+import React, { Suspense } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignIn from "./SignIn";
 import Browse from "./Browse";
 import ProtectedRoute from "../context/ProtectedRoute";
@@ -15,8 +9,11 @@ import { AuthProvider } from "../context/AuthContext";
 import PublicRoute from "../context/PublicRoute";
 
 import Home from "./Home";
-import Tvshow from "./TvShow/Tvshow";
 
+import TvsAndMovieSk from "./shimmrui/TvsAndMovieSk";
+import Movies from "./TvShowsAndMovies/Movies";
+import MyList from "./MyList.js/MyList";
+const TvshowsPage = React.lazy(() => import("./TvShowsAndMovies/Tvshow"));
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -43,11 +40,28 @@ const appRouter = createBrowserRouter([
           },
           {
             path: "tvshow",
-            element: <Tvshow />,
+            element: (
+              <Suspense fallback={<TvsAndMovieSk />}>
+                <TvshowsPage />
+                {/* <TvsAndMovieSk /> */}
+              </Suspense>
+            ),
+          },
+          {
+            path: "movies",
+            element: (
+              <Suspense fallback={<TvsAndMovieSk />}>
+                <Movies />
+              </Suspense>
+            ),
           },
           {
             path: "search",
             element: <SearchhMovies />,
+          },
+          {
+            path: "mylist",
+            element: <MyList />,
           },
           {
             path: "moviedetail/:MovieId",

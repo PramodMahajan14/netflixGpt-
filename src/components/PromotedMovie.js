@@ -80,7 +80,7 @@ const NetFlixIcon = () => {
 const PromotedMovie = (Movie) => {
   return (props) => {
     return (
-      <div className="relative h-auto w-auto bg-transparent">
+      <div className="relative max-h-fit w-auto bg-transparent">
         <li className="list-none absolute top-[6px] left-[1px] md:top-[10px] md:left-[5px]  p-0 m-0 size-5 md:size-4">
           <NetFlixIcon />
         </li>

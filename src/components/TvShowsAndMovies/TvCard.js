@@ -4,16 +4,16 @@ import { IMG_CDN_URL } from "../../util/constant";
 const TvCard = ({ tvData }) => {
   const { original_name, poster_path, vote_average, first_air_date } = tvData;
   return (
-    <div className="h-36 w-auto md:h-52 md:w-48 flex flex-col justify-center p-1 my-16 text-start text-white shadow-md">
+    <div className="h-36 w-auto md:h-52 md:w-48 flex flex-col justify-center p-1 my-[20px] sm:my-10 md:my-16 text-start text-white shadow-md">
       <img
         src={IMG_CDN_URL + poster_path}
         alt="image"
         className="min-h-auto   w-full   h-auto  w-auto rounded-sm cursor-pointer"
       />
-      <li className="list-none text-sm py-0 m-0 px-1">
+      <li className="list-none text-sm py-0 m-0 px-1 hidden sm:flex">
         {original_name.slice(0, 20)}
       </li>
-      <div className="flex justify-between px-1">
+      <div className="hidden sm:flex justify-between px-1">
         <li className="list-none text-sm">{first_air_date.slice(0, 4)}</li>
         <li className="list-none text-sm flex">
           <svg
