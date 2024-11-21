@@ -23,17 +23,17 @@ const SelectedMovie = () => {
   if (!movie) return <SelectedMovieSk />;
 
   return (
-    <div className="w-full h-full  shadow-md drop-shadow-md bg-gray-600 text-white rounded-lg max-h-[500px] overflow-y-scroll md:max-h-full md:overflow-hidden">
-      <div className="w-full h-1/2 relative ">
+    <div className="w-full h-full  shadow-md drop-shadow-md bg-gray-600 text-white rounded-lg max-h-[500px] overflow-y-scroll md:max-h-full md:overflow-hidden ">
+      <div className="w-full h-1/2 relative object-cover ">
         <img
           src={IMG_CDN_URL + movie?.backdrop_path}
           alt="image"
-          className="w-full h-[300px] rounded-t-lg "
+          className="w-full h-[300px] rounded-t-lg z-0"
         />
-        <li className="list-none p-[2px] rounded-full bg-gray-700  absolute top-2 right-2 cursor-pointer">
+        <li className="list-none p-[2px] rounded-full bg-gray-700  absolute top-2 right-2 cursor-pointer ">
           <ClosedIcon onClick={() => dispatch(closeModal())} />
         </li>
-        <h1 className="uppercase text-3xl absolute bottom-1 ml-1">
+        <h1 className="uppercase text-3xl absolute bottom-1 ml-1 z-20">
           {movie.original_title}
         </h1>
       </div>
@@ -46,7 +46,7 @@ const SelectedMovie = () => {
         </li>
       </div>
 
-      <p className="text-white px-1">{movie?.overview}</p>
+      <p className="text-white px-1 text-left">{movie?.overview}</p>
 
       <div className="flex justify-between px-2">
         <p className="text-slate-300">

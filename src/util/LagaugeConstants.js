@@ -15,6 +15,8 @@ export const langauges = {
     comming_soon: "Comming Soon",
     download: "Download",
     more: "More",
+    play: "Play",
+    more_info: "More Info",
 
     // SignIn-SingOut
     signinheader: "SIGN IN",
@@ -53,6 +55,13 @@ export const langauges = {
     terms_of_use: "Terms of Use",
     corporate_information: "Corporate Information",
     preview: "Preview",
+
+    // Movies Tv Page
+    airing_today: "Airing Today",
+    on_the_air: "On the Air",
+    popular: "Popular",
+    top_rated: "Top Rated",
+    upcoming: "Up Coming",
   },
   hi: {
     // browse
@@ -70,6 +79,8 @@ export const langauges = {
     comming_soon: "जल्द आ रहा है",
     download: "डाउनलोड",
     more: "अधिक",
+    play: "प्ले करा",
+    more_info: "अधिक माहिती",
 
     // Sign-in-sign-out
     signinheader: "साइन इन करें",
@@ -107,5 +118,12 @@ export const langauges = {
     terms_of_use: "उपयोग की शर्तें",
     corporate_information: "कॉर्पोरेट जानकारी",
     preview: "पूर्वावलोकन",
+
+    // movies & TV
+    airing_today: "आज प्रसारित हो रहा है",
+    on_the_air: "ऑन एयर ",
+    popular: "लोकप्रिय",
+    top_rated: "टॉप रेटेड",
+    upcoming: "आने वाली ",
   },
 };

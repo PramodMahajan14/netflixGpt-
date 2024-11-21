@@ -12,6 +12,7 @@
 - Authentication
 - Multiple Language Support
 - created Redux
+- Infinit scrolling
 - - Header
   - Main Movies
     - Tailer in background

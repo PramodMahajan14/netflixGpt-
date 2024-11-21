@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-
+import Footer from "./Footer";
 import MovieModal from "./MovieDetail/MovieModal";
 import { useDispatch, useSelector } from "react-redux";
 import { closeModal } from "../util/appSlice";
@@ -24,6 +24,7 @@ const Home = () => {
       <MovieModal isOpen={isModalOpen} onClose={closemodal}>
         <SelectedMovie />
       </MovieModal>
+      <Footer />
     </div>
   );
 };

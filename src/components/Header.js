@@ -21,6 +21,7 @@ import { removeUser } from "../util/userSlice";
 
 import { langauges } from "../util/LagaugeConstants";
 import { NavLink, useNavigate } from "react-router-dom";
+import { openModal } from "../util/appSlice";
 
 const Header = ({ isSign = true }) => {
   const User = useSelector((store) => store.user);
@@ -28,7 +29,6 @@ const Header = ({ isSign = true }) => {
   const [dropdownShow, setdropdownShow] = useState(false);
   const dropdownRef = useRef(null);
   const appLang = useSelector((store) => store.app.lang);
-  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -43,7 +43,7 @@ const Header = ({ isSign = true }) => {
   };
 
   const handleSearchClick = () => {
-    navigate("/browse/search");
+    dispatch(openModal("searchBrowse"));
   };
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -78,7 +78,7 @@ const Header = ({ isSign = true }) => {
                     {langauges[appLang].home}
                   </NavLink>
                 </li>
-                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none  rounded-sm ">
+                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none   ">
                   <NavLink
                     to="/browse/tvshow"
                     className={({ isActive }) => (isActive ? "underline" : "")}
@@ -86,7 +86,7 @@ const Header = ({ isSign = true }) => {
                     {langauges[appLang].tvshow}
                   </NavLink>
                 </li>
-                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none hover:bg-gray-200 rounded-sm">
+                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none  ">
                   <NavLink
                     to="/browse/movies"
                     className={({ isActive }) => (isActive ? "underline" : "")}
@@ -94,7 +94,7 @@ const Header = ({ isSign = true }) => {
                     {langauges[appLang].movies}
                   </NavLink>
                 </li>
-                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none hover:bg-gray-200 rounded-sm">
+                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none 0 ">
                   <NavLink
                     to="/browse/popular"
                     className={({ isActive }) => (isActive ? "underline" : "")}
@@ -103,7 +103,7 @@ const Header = ({ isSign = true }) => {
                   </NavLink>
                 </li>
 
-                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none hover:bg-gray-200 rounded-sm">
+                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none ">
                   <NavLink
                     to="/browse/mylist"
                     className={({ isActive }) => (isActive ? "underline" : "")}
@@ -111,7 +111,7 @@ const Header = ({ isSign = true }) => {
                     {langauges[appLang].mylist}
                   </NavLink>
                 </li>
-                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none hover:bg-gray-200 rounded-sm">
+                <li className="mx-2 py-[1px] px-[2px] md:mx-1 lg:mx-3 list-none ">
                   <NavLink
                     to="/browse"
                     className={({ isActive }) => (isActive ? "langauges" : "")}

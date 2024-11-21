@@ -14,6 +14,7 @@ const moviesSlice = createSlice({
       movieList: null,
       page: 1,
     },
+    searchResults: null,
   },
   reducers: {
     addMovieTvType: (state, action) => {
@@ -40,8 +41,21 @@ const moviesSlice = createSlice({
         state.tvShows.tvList = [...state.tvShows.tvList, ...action.payload];
       }
     },
+    addMovies: (state, action) => {
+      if (state.tvShows.movieList === null || state.tvShows.page === 1) {
+        state.tvShows.movieList = action.payload;
+      } else {
+        state.tvShows.movieList = [
+          ...state.tvShows.movieList,
+          ...action.payload,
+        ];
+      }
+    },
     increasePageNo: (state) => {
       state.tvShows.page = state.tvShows.page + 1;
+    },
+    addSearchResult: (state, action) => {
+      state.searchResults = action.payload;
     },
   },
 });
@@ -54,6 +68,8 @@ export const {
   addTvshows,
   addMovieTvType,
   increasePageNo,
+  addMovies,
+  addSearchResult,
 } = moviesSlice.actions;
 
 export default moviesSlice.reducer;

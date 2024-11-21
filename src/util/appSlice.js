@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import SearchBrowse from "../components/SearchBrowse/SearchBrowse";
 
 const appSlice = createSlice({
   name: "app",
   initialState: {
     showSearchBar: false,
     movieModalOpen: false,
+    SearchBrowseModal: false,
     selectedMovieId: null,
+
     lang: "en",
     region: "IN",
     loader: false,
@@ -25,11 +28,19 @@ const appSlice = createSlice({
     setLoader: (state, action) => {
       state.loader = action.payload;
     },
-    openModal: (state) => {
-      state.movieModalOpen = true;
+    openModal: (state, action) => {
+      if (action.payload) {
+        state.SearchBrowseModal = true;
+      } else {
+        state.movieModalOpen = true;
+      }
     },
-    closeModal: (state) => {
-      state.movieModalOpen = false;
+    closeModal: (state, action) => {
+      if (action.payload) {
+        state.SearchBrowseModal = false;
+      } else {
+        state.movieModalOpen = false;
+      }
     },
     setSelectedMovieId: (state, action) => {
       state.selectedMovieId = action.payload;

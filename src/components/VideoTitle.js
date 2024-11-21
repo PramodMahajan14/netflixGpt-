@@ -1,7 +1,10 @@
 import React from "react";
 import { ReactComponent as PlayIcon } from "../Assets/play.svg";
+import { useSelector } from "react-redux";
+import { langauges } from "../util/LagaugeConstants";
 
 const VideoTitle = ({ title, overview }) => {
+  const appLang = useSelector((store) => store.app.lang);
   return (
     <div
       className={`md:px-3   flex-col w-screen  items-center md:text-left  md:justify-start md:w-1/2 lg:w-1/4 h-auto absolute  top-96 text-center   inset-0 bg-opacity-50 ${
@@ -27,7 +30,7 @@ const VideoTitle = ({ title, overview }) => {
             />
           </svg>
 
-          <p>My List</p>
+          <p>{langauges[appLang].mylist}</p>
         </button>
         <button className="px-4 py-[2px] md:px-6 md:py-2 bg-white rounded-md text-black flex items-center font-bold">
           <svg
@@ -42,7 +45,7 @@ const VideoTitle = ({ title, overview }) => {
               clip-rule="evenodd"
             />
           </svg>
-          Play
+          {langauges[appLang].play}
         </button>
         <button className="px-3  md:px-6 md:py-2 md:bg-gray-500 md:rounded-md text-white flex items-center justify-between">
           <svg
@@ -59,7 +62,7 @@ const VideoTitle = ({ title, overview }) => {
               d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
             />
           </svg>
-          <p className="hidden md:block">More info</p>
+          <p className="hidden md:block">{langauges[appLang].more_info}</p>
         </button>
       </div>
     </div>
